@@ -1,0 +1,28 @@
+{
+  "Projects":[
+    {
+      "id_project":1,
+      "title":"FoodFlix",
+      "description":"Um serviço de streaming somente sobre comida",
+      "tasks":["Cadastrar novo usuário","Gerenciar catálago","Gerenciar cobranças"]
+    },
+    {
+      "id_project":2,
+      "title":"Pizza Rocket Menu",
+      "description":"Um Serviço de menu online para a pizzaria PIZZA ROCKET",
+      "tasks":["Mostrar produtos","Realizar pedido","Gerenciar pedidos"]
+    },
+    {
+      "id_project":3,
+      "title":"Delivery Express",
+      "description":"Um serviço de entregas para pequenos comércios",
+      "tasks":["Cadastrar produtos","Gerenciar pedidos","Acompanhar entregas"]
+    },
+    {
+      "id_project":4,
+      "title":"Sky Planet",
+      "description":"Um serviço de acompanhamento de estrelas",
+      "tasks":["Mapear o Céu a noite","Contactar outros observatórios"]
+    }
+  ]   
+}
