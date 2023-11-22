@@ -22,4 +22,17 @@ server.post('/projects', (req, res) => {
   return res.status(200).send();
 })
 
+server.put('/projects/:id', (req, res) => {
+  const { id } = req.params;
+  const { title, description} = req.body;
+  DATABASE[id]= {
+    id_project: id,
+    title,
+    description,
+    tasks:DATABASE[id].tasks
+  }
+
+  return res.status(200).send();
+})
+
 server.listen(3000)
