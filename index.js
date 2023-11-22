@@ -31,6 +31,20 @@ server.put('/projects/:id', (req, res) => {
     description,
     tasks:DATABASE[id].tasks
   }
+  return res.status(200).send();
+})
+
+server.post('/projects/:id/tasks', (req, res)=>{
+  const {id} = req.params;
+  const {tasks} = req.body;
+  tasks.forEach(task => DATABASE[id].tasks.push(task));
+
+  return res.status(200).send();
+});
+
+server.delete('/projects/:id', (req, res) => {
+  const { id } = req.params;  
+  DATABASE.splice(id, 1);
 
   return res.status(200).send();
 })
