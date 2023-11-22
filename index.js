@@ -3,8 +3,14 @@ const server = express();
 
 const DATABASE = require('./database.json') 
 server.use(express.json())
-
+let numberOfRequisitions = 0
 //MIDDLEWARES
+
+server.use((req, res, next)=>{
+  numberOfRequisitions++;
+  console.log(`Total of requisitions is ${numberOfRequisitions}`);
+  next();
+})
 
 function thisProjectExists(req, res, next){
   const {id} = req.params
