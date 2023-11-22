@@ -3,12 +3,11 @@ const server = express();
 
 const DATABASE = require('./database.json') 
 server.use(express.json())
-let numberOfRequisitions = 0
+
 //MIDDLEWARES
 
 server.use((req, res, next)=>{
-  numberOfRequisitions++;
-  console.log(`Total of requisitions is ${numberOfRequisitions}`);
+  console.count(`Total of requisitions is`);
   next();
 })
 
@@ -16,7 +15,7 @@ function thisProjectExists(req, res, next){
   const {id} = req.params
   const project = DATABASE.find(project => project.id_project == id)
   if(!project) 
-    return res.json({Message: "Project does not exists"})
+    return res.status(400).json({ error: 'Project not found' });
   
   next()
 }
